@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Credit Plus — Delivery List (12 Aug 2025) — AWB56200</title>
+<style>
+  :root{
+    --orange:#ff6600;
+    --dark:#0f1724;
+    --muted:#6b7280;
+    --card:#ffffff;
+    --bg:#f5f7fa;
+    --max:1100px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--dark)}
+  header{background:linear-gradient(90deg,#071021,#0d1b2a);color:#fff;padding:20px 16px;position:sticky;top:0;z-index:40}
+  .nav{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:18px}
+  .brand{font-weight:900;color:var(--orange);font-size:1.5rem;letter-spacing:1px}
+  .tag{color:#cbd5e1;font-weight:700;margin-left:6px;font-size:0.95rem}
+  nav.links{margin-left:auto;display:flex;gap:12px}
+  nav.links a{color:#cfe0f2;text-decoration:none;padding:8px 12px;border-radius:8px}
+  nav.links a.active, nav.links a:hover{background:rgba(255,255,255,0.04);color:#fff}
+
+  .hero{max-width:var(--max);margin:28px auto;display:grid;grid-template-columns:1fr 420px;gap:20px;padding:0 16px}
+  .hero-left{background:#fff;padding:26px;border-radius:12px;box-shadow:0 10px 30px rgba(10,18,28,0.06)}
+  .hero-left h1{margin:0;font-size:1.8rem;color:var(--dark)}
+  .hero-left p{margin-top:8px;color:var(--muted)}
+  .hero-right{display:flex;flex-direction:column;gap:14px}
+
+  .card{background:#fff;padding:16px;border-radius:12px;box-shadow:0 8px 24px rgba(10,18,28,0.05)}
+  label{display:block;font-size:0.85rem;color:var(--muted);margin-bottom:8px}
+  select,input,textarea,button{font-size:0.95rem;border-radius:8px;border:1px solid #e6e9ee;padding:10px}
+  .btn{background:var(--orange);color:#fff;border:none;padding:10px 12px;border-radius:8px;font-weight:800;cursor:pointer}
+  .btn.ghost{background:#fff;border:1px solid #eef2f6;color:var(--dark)}
+
+  .main{max-width:var(--max);margin:18px auto;padding:0 16px 60px}
+  .grid{display:grid;grid-template-columns:420px 1fr;gap:18px}
+
+  .delivery-list{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(11,18,28,0.04)}
+  .delivery-list h2{margin:0;font-size:1.05rem}
+  .small{color:var(--muted);font-size:0.95rem;margin-top:6px}
+  .list-scroll{max-height:540px;overflow:auto;margin-top:12px;padding-right:6px}
+
+  .ditem{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;margin-bottom:10px;background:#fbfdff;border:1px solid #f1f5f8}
+  .ditem .left{display:flex;gap:12px;align-items:center}
+  .awb{background:#fff6ed;color:var(--orange);padding:8px 10px;border-radius:8px;font-weight:800}
+  .addr{font-size:0.95rem;color:var(--muted)}
+  .ditem.blur{filter:blur(6px);pointer-events:none;user-select:none;color:transparent;text-shadow:0 0 6px rgba(0,0,0,0.12)}
+  .ditem.visible{background:linear-gradient(90deg,#fff9f1,#fffefc);border-left:4px solid var(--orange);font-weight:800}
+
+  /* Map area (static SVG map) */
+  .map-area{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 8px 30px rgba(11,18,28,0.04)}
+  .map-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .map-svg{width:100%;height:420px;border-radius:10px;background:linear-gradient(180deg,#eef6ff,#ffffff);display:flex;align-items:center;justify-content:center;border:1px solid #e6eef8}
+
+  .info-row{display:flex;gap:10px;margin-top:12px}
+  .info-block{flex:1;padding:12px;border-radius:10px;background:#fff;border:1px solid #f0f4f8}
+  .info-block h4{margin:0;font-size:0.9rem;color:var(--muted)}
+  .info-block p{margin:6px 0 0;font-weight:800;color:var(--dark)}
+
+  .about,.testimonials,.contact{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(11,18,28,0.04);margin-top:18px}
+  .test-grid{display:flex;gap:12px;flex-wrap:wrap}
+  .test-card{flex:1;min-width:200px;background:#fff;padding:12px;border-radius:10px;border:1px solid #f1f5f8}
+  .contact form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  footer{background:#071026;color:#a9bdcf;padding:18px;text-align:center;margin-top:20px}
+
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr;gap:12px}
+    .grid{grid-template-columns:1fr;gap:12px}
+    .map-svg{height:320px}
+  }
+  @media (max-width:560px){
+    nav.links{display:none}
+    .brand{font-size:1.15rem}
+    .contact form{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div>
+      <div class="brand">CREDIT <span style="color:#fff">PLUS</span></div>
+      <div class="tag">Fast • Trusted • Local (Thane)</div>
+    </div>
+    <nav class="links">
+      <a class="active" href="#">Delivery List</a>
+      <a href="#">Track</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-left card">
+    <h1 id="hero-heading">Delivery List — Tuesday, 12th August, 2025</h1>
+    <p class="small">Single preloaded delivery record is visible for privacy. Use the AWB quick-check to jump to the preloaded record.</p>
+
+    <div style="height:14px"></div>
+
+    <div style="display:flex;gap:10px;align-items:center">
+      <div style="flex:1">
+        <label for="awbInput">AWB quick-check</label>
+        <input id="awbInput" type="text" value="AWB56200" />
+      </div>
+      <div>
+        <button id="showBtn" class="btn" style="height:42px;margin-top:22px">Show</button>
+      </div>
+    </div>
+
+    <div style="height:16px"></div>
+
+    <div class="card" style="margin-top:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div class="small">Expected Delivery</div>
+          <div style="font-weight:900;color:var(--orange);font-size:1.05rem;margin-top:6px">Arriving On 12 August By 12 PM</div>
+        </div>
+        <div style="text-align:right">
+          <div class="small">Issuer</div>
+          <div style="font-weight:800;margin-top:6px" id="issuer">Credit Saison</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+    <div class="card map-area">
+      <div class="map-title">
+        <div>
+          <strong>Route Map</strong>
+          <div class="small">Static route: Rasayani → Thane Ovale</div>
+        </div>
+        <div style="color:var(--muted);font-weight:700">AWB56200</div>
+      </div>
+
+      <!-- Static SVG Route Map: Rasayani -> Thane Ovale -->
+      <div id="mapSVG" class="map-svg" aria-hidden="false">
+        <!-- Simple stylized SVG showing two pins and a curved path -->
+        <svg viewBox="0 0 1000 420" width="96%" height="92%" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Static route from Rasayani to Thane Ovale">
+          <defs>
+            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.12"/>
+            </filter>
+            <linearGradient id="grad" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffd39a"/>
+              <stop offset="100%" stop-color="#ff8a3d"/>
+            </linearGradient>
+          </defs>
+
+          <!-- background subtle -->
+          <rect x="0" y="0" width="1000" height="420" rx="10" fill="url(#bg)" opacity="0.0" />
+
+          <!-- Stylized path -->
+          <path d="M120 340 C260 260, 520 240, 700 140 C820 90, 920 60, 920 60" fill="none" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#shadow)"/>
+
+          <!-- Rasayani pin (start) -->
+          <g transform="translate(110,350)">
+            <circle r="14" fill="#fff" stroke="#ff8a3d" stroke-width="4"/>
+            <circle r="8" fill="#ff8a3d"/>
+            <text x="24" y="6" font-size="16" fill="#0f1724" font-weight="700">Rasayani</text>
+            <text x="24" y="26" font-size="13" fill="#6b7280">(Start)</text>
+          </g>
+
+          <!-- Intermediate town marks (decorative) -->
+          <g fill="#0f1724" font-size="12">
+            <text x="330" y="280">Panvel</text>
+            <circle cx="330" cy="285" r="3" fill="#bfc9d6"/>
+            <text x="540" y="210">Taloja</text>
+            <circle cx="540" cy="215" r="3" fill="#bfc9d6"/>
+            <text x="720" y="150">Koparkhairane</text>
+            <circle cx="720" cy="155" r="3" fill="#bfc9d6"/>
+          </g>
+
+          <!-- Thane Ovale pin (destination) -->
+          <g transform="translate(930,70)">
+            <path d="M0,0 C-10,18 -24,40 -24,60 A24,24 0 1 0 24,60 C24,40 10,18 0,0 Z" fill="#fff" stroke="#ff6600" stroke-width="3"/>
+            <circle cx="0" cy="42" r="7" fill="#ff6600"/>
+            <text x="-290" y="16" font-size="16" fill="#0f1724" font-weight="700">Thane Ovale</text>
+            <text x="-290" y="36" font-size="13" fill="#6b7280">(Destination)</text>
+          </g>
+
+          <!-- small decorative legend -->
+          <g transform="translate(22,18)">
+            <rect x="0" y="0" width="220" height="70" rx="8" fill="#fff" stroke="#f1f5f8"/>
+            <text x="14" y="22" font-size="13" fill="#6b7280">Route:</text>
+            <text x="14" y="40" font-size="14" font-weight="700" fill="#0f1724">Rasayani → Thane Ovale</text>
+            <text x="14" y="56" font-size="12" fill="#9aa6b8">Distance (approx): ~100 km</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="info-row">
+        <div class="info-block">
+          <h4>Recipient</h4>
+          <p id="recipient">Mrs. Sujata Kurle — Thane Ovale</p>
+          <div class="small">AWB: <strong id="awb">AWB56200</strong></div>
+        </div>
+        <div class="info-block">
+          <h4>Delivery Partner</h4>
+          <p id="driver">NS Bardi</p>
+          <div class="small">Bike: <strong id="bike">MH 04 FX7383</strong></div>
+          <div class="small">Phone: <strong id="driverPhone"><a href="tel:9082011949">9082011949</a></strong></div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="small">
+        <strong>Note:</strong> This is a static route preview (Rasayani → Thane Ovale). For live tracking use the main tracking page.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Main content -->
+<div class="main">
+
+  <!-- Left column: full roster (blurred) but only Sujata visible -->
+  <div class="delivery-list">
+    <h2>Delivery Roster — Thane District</h2>
+    <div class="small">For privacy only the highlighted delivery is readable.</div>
+    <div class="list-scroll" id="listScroll" role="list">
+      <!-- JS will populate all rows and make only AWB56200 visible -->
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="about">
+    <h3>About Credit Plus Couriers</h3>
+    <p class="small">Credit Plus Couriers provides regional, timely, and secure delivery services across the Thane district. We specialise in documents, small parcels and sensitive deliveries with professional riders and clear communication.</p>
+    <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">
+      <div style="background:#fff;padding:12px;border-radius:10px;min-width:160px">
+        <div class="small">Deliveries / day</div><div style="font-weight:800;color:var(--orange)">1200+</div>
+      </div>
+      <div style="background:#fff;padding:12px;border-radius:10px;min-width:160px">
+        <div class="small">Satisfaction</div><div style="font-weight:800;color:var(--orange)">98%</div>
+      </div>
+      <div style="background:#fff;padding:12px;border-radius:10px;min-width:160px">
+        <div class="small">Support</div><div style="font-weight:800;color:var(--orange)">Email</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div id="testimonials" class="testimonials">
+    <h3>Customer Testimonials</h3>
+    <div class="test-grid" style="margin-top:12px">
+      <div class="test-card">
+        <strong>“Fast delivery and clear updates. Really impressed.”</strong>
+        <div class="small" style="margin-top:8px">— Reema K., Thane</div>
+      </div>
+      <div class="test-card">
+        <strong>“Great service and friendly riders.”</strong>
+        <div class="small" style="margin-top:8px">— Manoj S., Mumbra</div>
+      </div>
+      <div class="test-card">
+        <strong>“Secure packaging and punctual delivery.”</strong>
+        <div class="small" style="margin-top:8px">— Anita P., Ghodbunder</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact / Raise request -->
+  <div id="contact" class="contact">
+    <h3>Raise a Request / Contact</h3>
+    <form id="reqForm" onsubmit="submitForm(event)">
+      <input name="name" placeholder="Your name" required />
+      <input name="phone" placeholder="Your phone" required />
+      <input name="email" placeholder="Your email (optional)" />
+      <textarea name="message" rows="4" placeholder="Details about your request..." style="grid-column:1 / -1"></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:10px">
+        <button class="btn" type="submit">Send Request</button>
+        <button type="reset" class="btn ghost">Reset</button>
+      </div>
+    </form>
+
+    <div style="margin-top:14px;font-size:0.95rem;color:var(--muted)">
+      <div><strong>Office Address:</strong> Credit Plus Couriers — Thane Hub, Ovale Road, Thane, Maharashtra</div>
+      <div style="margin-top:6px"><strong>Support Email:</strong> <a href="mailto:support@creditsiason.com">support@creditsiason.com</a></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div style="max-width:var(--max);margin:0 auto;padding:12px 16px;color:#9fb0c8">© 2025 Credit Plus Couriers — Thane • Email: <a href="mailto:support@creditsiason.com">support@creditsiason.com</a></div>
+</footer>
+
+<script>
+/* Populate the roster of 50 (blurred) except AWB56200 visible */
+const rosterNames = [
+  "Aarvik Chinnaswamy","Nisharaaj Moolchandani","Pratyush Debbarma","Zayed Perinchery","Himangi Godbole",
+  "Eshanth Kurella","Roopali Veeraghavan","Parthiban Pillareddy","Binalia Wangkheimayum","Farhaan Hathiramani",
+  "Preetha Kalvakolanu","Chintan Raghunathrao","Laxmiyaa Nanjappa","Tusharjit Phukan","Kairavi Nanavaty",
+  "Neelotpal Bharali","Janhavi Kizhakkethil","Samayendra Prusty","Tashvini Rajderkar","Indrajeet Bhoi",
+  "Arohi Mukkavilli","Vighnesh Khatau","Aadhira Bendre","Rudranil Choudhury","Mahika Pasupathi",
+  "Goutham Rachakonda","Vidhushi Chevli","Anirudh Angadi",
+  /*29*/ "Mrs. Sujata Kurle",
+  "Harshvardhan Pamnani","Srishti Kunjir","Devashish Huilgol","Raveena Sidhuja","Abhiram Muthulingam",
+  "Yutika Bahulekar","Zoravar Sokhal","Kaavya Manapragada","Arvind Nandivada","Prajwala Jogalekar",
+  "Nishok Penumaka","Kirtika Govindaraju","Ronav Saldanha","Nehalata Pochampally","Atharv Dhumal",
+  "Tamannah Solabakkanavar","Kartikeya Lankapalli","Ishanya Oza","Anantya Thottempudi","Manjushri Chitnis","Vibhavraj Motwani"
+];
+
+const localities = ["Ghodbunder","Mumbra","Kalyan West","Mira Road","Dombivli East","Kalwa","Kopri","Thane East","Kasarvadavali","Naupada","Majiwada","Shilphata","Vartak Nagar","Manpada","Balkum","Kopri Colony","Kalyan East","Diva","Rabodi","Panchpakhadi","Patlipada","Vasant Vihar","Owala","Wagle Estate","Charai"];
+
+function buildRoster(){
+  const el = document.getElementById('listScroll');
+  el.innerHTML = '';
+  for(let i=0;i<50;i++){
+    const idx = i+1;
+    const wrap = document.createElement('div');
+    wrap.className = 'ditem';
+    // only AWB56200 visible (29)
+    const awb = (idx === 29) ? 'AWB56200' : 'AWB561' + ( idx < 10 ? '0' + idx : (idx) );
+    if(idx !== 29) wrap.classList.add('blur'); else wrap.classList.add('visible');
+
+    const left = document.createElement('div'); left.className='left';
+    const awbDiv = document.createElement('div'); awbDiv.className='awb'; awbDiv.textContent = awb;
+    const textDiv = document.createElement('div');
+    const nm = document.createElement('div'); nm.style.fontWeight='700'; nm.textContent = rosterNames[i] || ('Recipient ' + idx);
+    const addr = document.createElement('div'); addr.className='addr'; addr.textContent = localities[i % localities.length];
+    textDiv.appendChild(nm); textDiv.appendChild(addr);
+    left.appendChild(awbDiv); left.appendChild(textDiv);
+
+    const right = document.createElement('div');
+    right.innerHTML = '<div class="small">Issuer</div><div style="font-weight:800;margin-top:6px">' + (idx===29 ? 'Credit Saison' : randomIssuer(i)) + '</div>';
+
+    wrap.appendChild(left); wrap.appendChild(right);
+    el.appendChild(wrap);
+  }
+}
+
+function randomIssuer(i){
+  const pool = ["NSDL","Bajaj Finance","Tata Capital","IDFC First","L&T Finance","HDB Financial","Aditya Birla Finance","Muthoot Fincorp","Manappuram","Sundaram Finance","Cholamandalam","Mahindra Finance","Ujjivan SFB","ESAF SFB","Axis Finance","Fullerton","Capital First","ICICI Lombard","Kotak Finance","Hero FinCorp","Piramal Capital","PNB Housing","LIC Housing","Magma Fincorp","Hinduja Leyland","SBI Cards","Indiabulls","Jana SFB","Religare Finvest","Shubham Housing","Clix Capital","Capri Global","IIFL Finance","DCB Bank","TVS Credit","MAS Financial","Samasta","Five Star","Spandana"];
+  return pool[i % pool.length];
+}
+
+/* Initialize page with Sujata Kurle data */
+document.addEventListener('DOMContentLoaded', function(){
+  buildRoster();
+
+  // Preload single record info
+  document.getElementById('recipient').textContent = 'Mrs. Sujata Kurle — Thane Ovale';
+  document.getElementById('awb').textContent = 'AWB56200';
+  document.getElementById('driver').textContent = 'NS Bardi';
+  document.getElementById('bike').textContent = 'MH 04 FX7383';
+  document.getElementById('driverPhone').innerHTML = '<a href="tel:9082011949">9082011949</a>';
+  document.getElementById('issuer').textContent = 'Credit Saison';
+
+  // AWB quick-check action: if correct AWB entered, scroll to visible and focus block
+  document.getElementById('showBtn').addEventListener('click', function(){
+    const val = (document.getElementById('awbInput').value || '').trim().toUpperCase();
+    if(val === 'AWB56200'){
+      // scroll to the visible item
+      const list = document.getElementById('listScroll');
+      const nodes = list.querySelectorAll('.ditem');
+      let target = null;
+      nodes.forEach(n=>{
+        if(n.querySelector('.awb').textContent.trim() === 'AWB56200') target = n;
+      });
+      if(target){
+        target.scrollIntoView({behavior:'smooth',block:'center'});
+        // briefly highlight
+        target.style.boxShadow = '0 6px 24px rgba(255,102,0,0.12)';
+        setTimeout(()=>target.style.boxShadow='none',1500);
+      } else alert('AWB not found');
+    } else {
+      alert('Only AWB56200 is preloaded in this demo. Enter AWB56200 to view.');
+    }
+  });
+
+  // contact form demo handler
+  window.submitForm = function(e){
+    e.preventDefault();
+    const f = document.getElementById('reqForm');
+    alert('Request received (demo). We will contact you at ' + (f.phone.value || 'your phone') + '.');
+    f.reset();
+  };
+
+});
+</script>
+</body>
+</html>
